@@ -23,6 +23,10 @@ public class ItemDropHandler implements Listener {
 
     @EventHandler
     public void onItemDrop(PlayerDropItemEvent event){
+        if(!event.getPlayer().hasPermission("fishingcrates.crates.open")){
+            return;
+        }
+
         if(event.getItemDrop().getItemStack().getItemMeta().getLore() == null){
             return;
         }

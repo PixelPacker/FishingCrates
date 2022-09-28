@@ -22,11 +22,13 @@ public class FishingHandler implements Listener {
     public FishingHandler(FishingCrates plugin){
         Bukkit.getPluginManager().registerEvents(this, plugin);
     }
-
     private static Configuration config = JavaPlugin.getPlugin(FishingCrates.class).getConfig();
 
     @EventHandler
     public void onItemFished(PlayerFishEvent fishEvent) {
+        if(!fishEvent.getPlayer().hasPermission("fishingcrates.crates.get")){
+            return;
+        }
 
         if(fishEvent.getState() != PlayerFishEvent.State.CAUGHT_FISH){
             return;

@@ -1,0 +1,4 @@
+name: Fishingcrates
+version: '${project.version}'
+main: pixelpacker.fishingcrates.FishingCrates
+api-version: 1.19

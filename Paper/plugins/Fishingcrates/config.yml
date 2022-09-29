@@ -4,6 +4,7 @@ times_to_loot_basic_crate: 3
 basic_crate:
   - DIAMOND
   - IRON_INGOT
+  - IRON_BLOCK
 
 times_to_loot_not_basic_crate: 3
 not_basic_crate:

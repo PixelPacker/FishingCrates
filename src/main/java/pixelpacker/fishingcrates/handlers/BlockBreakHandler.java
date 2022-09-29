@@ -9,6 +9,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.SkullMeta;
+import org.bukkit.plugin.Plugin;
 import pixelpacker.fishingcrates.FishingCrates;
 import pixelpacker.fishingcrates.items.CrateItems;
 
@@ -33,9 +34,10 @@ public class BlockBreakHandler implements Listener {
                 Location location = blockBreakEvent.getBlock().getLocation();
                 if(skullMeta.getOwnerProfile() != null){
                     //Introduce new crates here in order to get said crate when block is broken
-                    if(skullMeta.getOwnerProfile().getName() == CrateItems.getBasicCrateProfile(server).getName()){
+                    Bukkit.getLogger().info(skullMeta.getOwnerProfile().getName());
+                    if(Objects.equals(skullMeta.getOwnerProfile().getName(), CrateItems.getBasicCrateProfile(server).getName())){
                         replaceDroppedItem(CrateItems.getBasicCrate(server), location, blockBreakEvent);
-                    } else if (skullMeta.getOwnerProfile().getName() == CrateItems.getNotBasicCrateProfile(server).getName()) {
+                    } else if (Objects.equals(skullMeta.getOwnerProfile().getName(), CrateItems.getNotBasicCrateProfile(server).getName())) {
                         replaceDroppedItem(CrateItems.getNotBasicCrate(server), location, blockBreakEvent);
                     }
                 }

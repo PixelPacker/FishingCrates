@@ -2,7 +2,6 @@ package pixelpacker.fishingcrates.items;
 
 import org.bukkit.Material;
 import org.bukkit.Server;
-import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.SkullMeta;
 import org.bukkit.profile.PlayerProfile;
@@ -61,7 +60,6 @@ public class CrateItems {
             "Not a basic crate.",
             "Drop this to open up what's inside."
     );
-
 
     /**
      * - VERY IMPORTANT -

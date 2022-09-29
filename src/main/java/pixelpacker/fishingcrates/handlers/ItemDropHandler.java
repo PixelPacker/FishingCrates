@@ -5,7 +5,6 @@ import org.bukkit.configuration.Configuration;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerDropItemEvent;
-import org.bukkit.event.player.PlayerEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -13,7 +12,6 @@ import pixelpacker.fishingcrates.FishingCrates;
 import pixelpacker.fishingcrates.crates.LootCrateTables;
 import pixelpacker.fishingcrates.items.CrateItems;
 
-import java.net.MalformedURLException;
 import java.util.List;
 
 public class ItemDropHandler implements Listener {
@@ -60,6 +58,4 @@ public class ItemDropHandler implements Listener {
         }
         eventItemStack.setAmount(-stackSize);
     }
-
-
 }

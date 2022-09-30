@@ -1,4 +1,4 @@
-name: Fishingcrates
+name: FishingCrates
 version: '${project.version}'
 main: pixelpacker.fishingcrates.FishingCrates
 api-version: 1.19
@@ -6,6 +6,6 @@ commands:
   givecrate:
     description: Allows for an admin to give a player a crate.
     permission: fishingcrates.admin
-    usage: /givecrate <player> <BasicCrate | NotBasicCrate> [Number of Crates]
+    usage: /givecrate <player> <crate1 (Can be 1-10)> [Number of Crates]
     aliases: gcrate
     permission-message: You do not have the permissions to give a player a crate.

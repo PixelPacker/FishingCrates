@@ -1,12 +1,169 @@
-chance_to_get_crate: 99
+#Having this enabled will spawn loot around the player rather than in their inventory. Disabling this can help combat lag
+spawn_loot_in_world: true
 
-times_to_loot_basic_crate: 3
-basic_crate:
+#Odds of a player getting a crate while fishing
+chance_to_get_crate: 100
+
+#Notes will only be on this crate however it's applicable to all crates meaning you can enable or modify other crates!
+
+#Sets if the crate can be fished up
+crate1_enabled: true
+#How many times it will loot it's loot table
+times_to_loot_crate1: 3
+#Name of the crate MUST BE UNIQUE. To spawn a crate you have to reference it's code name (Ex: /gcrate Player crate1 64)
+crate1_name: Mining Resource Crate
+#Lore of the item MUST BE UNIQUE
+crate1_lore:
+  - A crate full of mining resources!
+  - Drop it to find what's inside
+#List of items in the loot crate See (https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html) for a list of all possible items. Doesn't support NBT data.
+#Doesn't support weighting however it can be weighted by inputting duplicate entries
+crate1_loot:
   - DIAMOND
-  - IRON_INGOT
-  - IRON_BLOCK
-
-times_to_loot_not_basic_crate: 3
-not_basic_crate:
   - EMERALD
+  - IRON_INGOT
+  - IRON_INGOT
+  - IRON_INGOT
+  - GOLD_INGOT
+  - GOLD_INGOT
   - COPPER_INGOT
+  - COPPER_INGOT
+  - COPPER_INGOT
+  - REDSTONE
+  - REDSTONE
+  - LAPIS_LAZULI
+  - COAL
+  - COAL
+  - COAL
+  - COAL
+
+crate2_enabled: true
+times_to_loot_crate2: 3
+crate2_name: Plant Resource Crate
+crate2_lore:
+  - A crate full of various flowers!.
+  - Drop it to find what's inside
+crate2_loot:
+  - DANDELION
+  - POPPY
+  - BLUE_ORCHID
+  - ALLIUM
+  - AZURE_BLUET
+  - RED_TULIP
+  - ORANGE_TULIP
+  - WHITE_TULIP
+  - PINK_TULIP
+  - ORANGE_TULIP
+  - OXEYE_DAISY
+  - CORNFLOWER
+  - LILY_OF_THE_VALLEY
+  - SUNFLOWER
+  - LILAC
+  - ROSE_BUSH
+  - PEONY
+  - CACTUS
+  - CACTUS
+  - SUGAR_CANE
+  - SUGAR_CANE
+  - PUMPKIN
+  - MELON
+  - CARROT
+  - COCOA
+  - POTATO
+  - BAMBOO
+  - BAMBOO
+  - APPLE
+  - BEETROOT
+
+crate3_enabled: true
+times_to_loot_crate3: 3
+crate3_name: Mob Resource Crate
+crate3_lore:
+  - A crate full of resources dropped by mobs!
+  - Drop it to find what's inside
+crate3_loot:
+  - ROTTEN_FLESH
+  - ROTTEN_FLESH
+  - GUNPOWDER
+  - GUNPOWDER
+  - LEATHER
+  - STRING
+  - STRING
+  - PHANTOM_MEMBRANE
+  - SLIME_BALL
+  - SLIME_BALL
+  - SLIME_BALL
+  - ENDER_PEARL
+  - PRISMARINE_SHARD
+  - PRISMARINE_CRYSTALS
+
+crate4_enabled: false
+times_to_loot_crate4: 3
+crate4_name: Crate 4
+crate4_lore:
+  - A Crate 4.
+  - Drop it to find what's inside
+crate4_loot:
+  - ROTTEN_FLESH
+  - ROTTEN_FLESH
+
+
+crate5_enabled: false
+times_to_loot_crate5: 3
+crate5_name: Crate 5
+crate5_lore:
+  - A Crate 5.
+  - Drop it to find what's inside
+crate5_loot:
+  - LADDER
+  - LADDER
+
+crate6_enabled: false
+times_to_loot_crate6: 3
+crate6_name: Crate 6
+crate6_lore:
+  - A Crate 6.
+  - Drop it to find what's inside
+crate6_loot:
+  - LEAD
+  - LEAD
+
+crate7_enabled: false
+times_to_loot_crate7: 3
+crate7_name: Crate 7
+crate7_lore:
+  - A Crate 7.
+  - Drop it to find what's inside
+crate7_loot:
+  - JUKEBOX
+  - JUKEBOX
+
+crate8_enabled: false
+times_to_loot_crate8: 3
+crate8_name: Crate 8
+crate8_lore:
+  - A Crate 8.
+  - Drop it to find what's inside
+crate8_loot:
+  - MINECART
+  - MINECART
+
+crate9_enabled: false
+times_to_loot_crate9: 3
+crate9_name: Crate 9
+crate9_lore:
+  - A Crate 9.
+  - Drop it to find what's inside
+crate9_loot:
+  - SUGAR
+  - SUGAR
+
+crate10_enabled: false
+times_to_loot_crate10: 3
+crate10_name: Crate 10
+crate10_lore:
+  - A Crate 10.
+  - Drop it to find what's inside
+crate10_loot:
+  - STRING
+  - STRING

@@ -17,6 +17,8 @@ import pixelpacker.fishingcrates.FishingCrates;
 import pixelpacker.fishingcrates.crates.LootCrateTables;
 import pixelpacker.fishingcrates.util.RandomSingleton;
 
+import java.net.MalformedURLException;
+
 
 public class FishingHandler implements Listener {
     public FishingHandler(FishingCrates plugin){
@@ -25,7 +27,7 @@ public class FishingHandler implements Listener {
     private static Configuration config = JavaPlugin.getPlugin(FishingCrates.class).getConfig();
 
     @EventHandler
-    public void onItemFished(PlayerFishEvent fishEvent) {
+    public void onItemFished(PlayerFishEvent fishEvent) throws MalformedURLException {
         if(!fishEvent.getPlayer().hasPermission("fishingcrates.crates.get")){
             return;
         }
@@ -38,7 +40,7 @@ public class FishingHandler implements Listener {
             World pWorld = player.getWorld();
             Location playerLocation = player.getLocation();
             Inventory playerInv = player.getInventory();
-            ItemStack randomCrate = LootCrateTables.chooseItemStack(LootCrateTables.Table_Of_Crates);
+            ItemStack randomCrate = LootCrateTables.chooseItemStack(LootCrateTables.getTableOfCrates());
 
             pWorld.playSound(playerLocation, Sound.BLOCK_NOTE_BLOCK_CHIME, 1f, 1.2f);
             playerInv.addItem(randomCrate);

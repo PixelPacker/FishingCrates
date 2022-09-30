@@ -11,8 +11,10 @@ import org.bukkit.plugin.java.JavaPlugin;
 import pixelpacker.fishingcrates.FishingCrates;
 import pixelpacker.fishingcrates.crates.LootCrateTables;
 import pixelpacker.fishingcrates.items.CrateItems;
+import pixelpacker.fishingcrates.util.RandomSingleton;
 
 import java.util.List;
+import java.util.Objects;
 
 public class ItemDropHandler implements Listener {
 
@@ -24,7 +26,6 @@ public class ItemDropHandler implements Listener {
         if(!event.getPlayer().hasPermission("fishingcrates.crates.open")){
             return;
         }
-
         if(event.getItemDrop().getItemStack().getItemMeta().getLore() == null){
             return;
         }
@@ -34,19 +35,44 @@ public class ItemDropHandler implements Listener {
         World pWorld = event.getPlayer().getWorld();
         Location dropLocation = event.getItemDrop().getLocation();
         //Checks if item lore is the same as said crate and then creates loot from config
-        if(eventItemLore.equals(CrateItems.Basic_Crate_Lore)){
-            spawnLoot(eventItemStack, pWorld, dropLocation, LootCrateTables.Basic_Crate_Table(), "times_to_loot_basic_crate");
-        } else if (eventItemLore.equals(CrateItems.Not_Basic_Crate_Lore)) {
-            spawnLoot(eventItemStack, pWorld, dropLocation, LootCrateTables.Not_Basic_Crate_Table(), "times_to_loot_not_basic_crate");
+        if(eventItemLore.equals(CrateItems.getCrate1Lore)){
+            spawnLoot(eventItemStack, event, pWorld, dropLocation, LootCrateTables.crate1Table(), "times_to_loot_crate1");
+        } else if (eventItemLore.equals(CrateItems.getCrate2Lore)) {
+            spawnLoot(eventItemStack, event, pWorld, dropLocation, LootCrateTables.crate2Table(), "times_to_loot_crate2");
+        }else if (eventItemLore.equals(CrateItems.getCrate3Lore)) {
+            spawnLoot(eventItemStack, event, pWorld, dropLocation, LootCrateTables.crate3Table(), "times_to_loot_crate3");
+        }else if (eventItemLore.equals(CrateItems.getCrate4Lore)) {
+            spawnLoot(eventItemStack, event, pWorld, dropLocation, LootCrateTables.crate4Table(), "times_to_loot_crate4");
+        }else if (eventItemLore.equals(CrateItems.getCrate5Lore)) {
+            spawnLoot(eventItemStack, event, pWorld, dropLocation, LootCrateTables.crate5Table(), "times_to_loot_crate5");
+        }else if (eventItemLore.equals(CrateItems.getCrate6Lore)) {
+            spawnLoot(eventItemStack, event, pWorld, dropLocation, LootCrateTables.crate6Table(), "times_to_loot_crate6");
+        }else if (eventItemLore.equals(CrateItems.getCrate7Lore)) {
+            spawnLoot(eventItemStack, event, pWorld, dropLocation, LootCrateTables.crate7Table(), "times_to_loot_crate7");
+        }else if (eventItemLore.equals(CrateItems.getCrate8Lore)) {
+            spawnLoot(eventItemStack, event, pWorld, dropLocation, LootCrateTables.crate8Table(), "times_to_loot_crate8");
+        }else if (eventItemLore.equals(CrateItems.getCrate9Lore)) {
+            spawnLoot(eventItemStack, event, pWorld, dropLocation, LootCrateTables.crate9Table(), "times_to_loot_crate9");
+        }else if (eventItemLore.equals(CrateItems.getCrate10Lore)) {
+            spawnLoot(eventItemStack, event, pWorld, dropLocation, LootCrateTables.crate10Table(), "times_to_loot_crate10");
         }
     }
 
-    public void spawnLoot(ItemStack eventItemStack, World world, Location dropLocation, List<Material > itemMaterialList, String timesToLootKey){
+    public void spawnLoot(ItemStack eventItemStack, PlayerDropItemEvent playerDropItemEvent, World world, Location dropLocation, List<Material > itemMaterialList, String timesToLootKey){
         int stackSize = eventItemStack.getAmount(), i = 0;
         while(i < stackSize){
             int d = 0;
             while(d < config.getInt(timesToLootKey)){
-                world.dropItemNaturally(dropLocation, new ItemStack(LootCrateTables.chooseMaterial(itemMaterialList)));
+                if(config.getBoolean("spawn_loot_in_world")){
+                    double x = dropLocation.getX() + RandomSingleton.random.nextInt(2) - 1f;
+                    double y = dropLocation.getY();
+                    double z = dropLocation.getZ() + RandomSingleton.random.nextInt(2) - 1f;
+
+                    Location randomizedLocation = new Location(world, x, y, z);
+                    world.dropItemNaturally(randomizedLocation, new ItemStack(LootCrateTables.chooseMaterial(itemMaterialList)));
+                }else{
+                    playerDropItemEvent.getPlayer().getInventory().addItem(new ItemStack(LootCrateTables.chooseMaterial(itemMaterialList)));
+                }
                 d++;
             }
             world.spawnParticle(Particle.FIREWORKS_SPARK, dropLocation, 10);

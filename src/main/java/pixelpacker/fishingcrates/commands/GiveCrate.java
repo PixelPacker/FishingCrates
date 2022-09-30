@@ -20,11 +20,18 @@ import java.util.Locale;
 public class GiveCrate implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        ItemStack basicCrate;
-        ItemStack notBasicCrate;
+        ItemStack crate1, crate2, crate3, crate4, crate5, crate6, crate7, crate8, crate9, crate10;
         try {
-            basicCrate = CrateItems.getBasicCrate(sender.getServer());
-            notBasicCrate = CrateItems.getNotBasicCrate(sender.getServer());
+            crate1 = CrateItems.getCrate1(sender.getServer());
+            crate2 = CrateItems.getCrate2(sender.getServer());
+            crate3 = CrateItems.getCrate3(sender.getServer());
+            crate4 = CrateItems.getCrate4(sender.getServer());
+            crate5 = CrateItems.getCrate5(sender.getServer());
+            crate6 = CrateItems.getCrate6(sender.getServer());
+            crate7 = CrateItems.getCrate7(sender.getServer());
+            crate8 = CrateItems.getCrate8(sender.getServer());
+            crate9 = CrateItems.getCrate9(sender.getServer());
+            crate10 = CrateItems.getCrate10(sender.getServer());
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
@@ -39,29 +46,141 @@ public class GiveCrate implements CommandExecutor {
         if(player != null){
             Location targetPlayerLocation = player.getLocation();
             switch (crateInput) {
-                case ("basiccrate") -> {
-                    sender.sendMessage("Gave " + playerName + " Basic Crate");
+                case ("crate1") -> {
+                    sender.sendMessage("Gave " + playerName + " Crate 1");
                     player.playSound(targetPlayerLocation, Sound.ENTITY_ITEM_PICKUP, 1f, 1f);
                     if(numberOfCrates == 1){
-                        player.getInventory().addItem(basicCrate);
+                        player.getInventory().addItem(crate1);
                     }else{
                         int i = 0;
                         while(i < numberOfCrates){
-                            player.getInventory().addItem(basicCrate);
+                            player.getInventory().addItem(crate1);
                             i++;
                         }
                     }
                     return true;
                 }
-                case ("notbasiccrate") -> {
-                    sender.sendMessage("Gave " + playerName + " Not Basic Crate");
+                case ("crate2") -> {
+                    sender.sendMessage("Gave " + playerName + " Crate 2");
                     player.playSound(targetPlayerLocation, Sound.ENTITY_ITEM_PICKUP, 1f, 1f);
                     if(numberOfCrates == 0){
-                        player.getInventory().addItem(notBasicCrate);
+                        player.getInventory().addItem(crate2);
                     }else{
                         int i = 0;
                         while(i < numberOfCrates){
-                            player.getInventory().addItem(notBasicCrate);
+                            player.getInventory().addItem(crate2);
+                            i++;
+                        }
+                    }
+                    return true;
+                }
+                case ("crate3") -> {
+                    sender.sendMessage("Gave " + playerName + " Crate 3");
+                    player.playSound(targetPlayerLocation, Sound.ENTITY_ITEM_PICKUP, 1f, 1f);
+                    if(numberOfCrates == 0){
+                        player.getInventory().addItem(crate3);
+                    }else{
+                        int i = 0;
+                        while(i < numberOfCrates){
+                            player.getInventory().addItem(crate3);
+                            i++;
+                        }
+                    }
+                    return true;
+                }
+                case ("crate4") -> {
+                    sender.sendMessage("Gave " + playerName + " Crate 4");
+                    player.playSound(targetPlayerLocation, Sound.ENTITY_ITEM_PICKUP, 1f, 1f);
+                    if(numberOfCrates == 0){
+                        player.getInventory().addItem(crate4);
+                    }else{
+                        int i = 0;
+                        while(i < numberOfCrates){
+                            player.getInventory().addItem(crate4);
+                            i++;
+                        }
+                    }
+                    return true;
+                }
+                case ("crate5") -> {
+                    sender.sendMessage("Gave " + playerName + " Crate 5");
+                    player.playSound(targetPlayerLocation, Sound.ENTITY_ITEM_PICKUP, 1f, 1f);
+                    if(numberOfCrates == 0){
+                        player.getInventory().addItem(crate5);
+                    }else{
+                        int i = 0;
+                        while(i < numberOfCrates){
+                            player.getInventory().addItem(crate5);
+                            i++;
+                        }
+                    }
+                    return true;
+                }
+                case ("crate6") -> {
+                    sender.sendMessage("Gave " + playerName + " Crate 6");
+                    player.playSound(targetPlayerLocation, Sound.ENTITY_ITEM_PICKUP, 1f, 1f);
+                    if(numberOfCrates == 0){
+                        player.getInventory().addItem(crate6);
+                    }else{
+                        int i = 0;
+                        while(i < numberOfCrates){
+                            player.getInventory().addItem(crate6);
+                            i++;
+                        }
+                    }
+                    return true;
+                }
+                case ("crate7") -> {
+                    sender.sendMessage("Gave " + playerName + " Crate 7");
+                    player.playSound(targetPlayerLocation, Sound.ENTITY_ITEM_PICKUP, 1f, 1f);
+                    if(numberOfCrates == 0){
+                        player.getInventory().addItem(crate7);
+                    }else{
+                        int i = 0;
+                        while(i < numberOfCrates){
+                            player.getInventory().addItem(crate7);
+                            i++;
+                        }
+                    }
+                    return true;
+                }
+                case ("crate8") -> {
+                    sender.sendMessage("Gave " + playerName + " Crate 8");
+                    player.playSound(targetPlayerLocation, Sound.ENTITY_ITEM_PICKUP, 1f, 1f);
+                    if(numberOfCrates == 0){
+                        player.getInventory().addItem(crate8);
+                    }else{
+                        int i = 0;
+                        while(i < numberOfCrates){
+                            player.getInventory().addItem(crate8);
+                            i++;
+                        }
+                    }
+                    return true;
+                }
+                case ("crate9") -> {
+                    sender.sendMessage("Gave " + playerName + " Crate 9");
+                    player.playSound(targetPlayerLocation, Sound.ENTITY_ITEM_PICKUP, 1f, 1f);
+                    if(numberOfCrates == 0){
+                        player.getInventory().addItem(crate9);
+                    }else{
+                        int i = 0;
+                        while(i < numberOfCrates){
+                            player.getInventory().addItem(crate9);
+                            i++;
+                        }
+                    }
+                    return true;
+                }
+                case ("crate10") -> {
+                    sender.sendMessage("Gave " + playerName + " Crate 10");
+                    player.playSound(targetPlayerLocation, Sound.ENTITY_ITEM_PICKUP, 1f, 1f);
+                    if(numberOfCrates == 0){
+                        player.getInventory().addItem(crate10);
+                    }else{
+                        int i = 0;
+                        while(i < numberOfCrates){
+                            player.getInventory().addItem(crate10);
                             i++;
                         }
                     }

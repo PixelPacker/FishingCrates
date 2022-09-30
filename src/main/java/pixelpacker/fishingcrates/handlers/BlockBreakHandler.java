@@ -34,11 +34,26 @@ public class BlockBreakHandler implements Listener {
                 Location location = blockBreakEvent.getBlock().getLocation();
                 if(skullMeta.getOwnerProfile() != null){
                     //Introduce new crates here in order to get said crate when block is broken
-                    Bukkit.getLogger().info(skullMeta.getOwnerProfile().getName());
-                    if(Objects.equals(skullMeta.getOwnerProfile().getName(), CrateItems.getBasicCrateProfile(server).getName())){
-                        replaceDroppedItem(CrateItems.getBasicCrate(server), location, blockBreakEvent);
-                    } else if (Objects.equals(skullMeta.getOwnerProfile().getName(), CrateItems.getNotBasicCrateProfile(server).getName())) {
-                        replaceDroppedItem(CrateItems.getNotBasicCrate(server), location, blockBreakEvent);
+                    if(Objects.equals(skullMeta.getOwnerProfile().getName(), CrateItems.getCrate1Profile(server).getName())){
+                        replaceDroppedItem(CrateItems.getCrate1(server), location, blockBreakEvent);
+                    } else if (Objects.equals(skullMeta.getOwnerProfile().getName(), CrateItems.getCrate2Profile(server).getName())) {
+                        replaceDroppedItem(CrateItems.getCrate2(server), location, blockBreakEvent);
+                    } else if (Objects.equals(skullMeta.getOwnerProfile().getName(), CrateItems.getCrate3Profile(server).getName())) {
+                        replaceDroppedItem(CrateItems.getCrate3(server), location, blockBreakEvent);
+                    } else if (Objects.equals(skullMeta.getOwnerProfile().getName(), CrateItems.getCrate4Profile(server).getName())) {
+                        replaceDroppedItem(CrateItems.getCrate4(server), location, blockBreakEvent);
+                    } else if (Objects.equals(skullMeta.getOwnerProfile().getName(), CrateItems.getCrate5Profile(server).getName())) {
+                        replaceDroppedItem(CrateItems.getCrate5(server), location, blockBreakEvent);
+                    } else if (Objects.equals(skullMeta.getOwnerProfile().getName(), CrateItems.getCrate6Profile(server).getName())) {
+                        replaceDroppedItem(CrateItems.getCrate6(server), location, blockBreakEvent);
+                    } else if (Objects.equals(skullMeta.getOwnerProfile().getName(), CrateItems.getCrate7Profile(server).getName())) {
+                        replaceDroppedItem(CrateItems.getCrate7(server), location, blockBreakEvent);
+                    } else if (Objects.equals(skullMeta.getOwnerProfile().getName(), CrateItems.getCrate8Profile(server).getName())) {
+                        replaceDroppedItem(CrateItems.getCrate8(server), location, blockBreakEvent);
+                    } else if (Objects.equals(skullMeta.getOwnerProfile().getName(), CrateItems.getCrate9Profile(server).getName())) {
+                        replaceDroppedItem(CrateItems.getCrate9(server), location, blockBreakEvent);
+                    } else if (Objects.equals(skullMeta.getOwnerProfile().getName(), CrateItems.getCrate10Profile(server).getName())) {
+                        replaceDroppedItem(CrateItems.getCrate10(server), location, blockBreakEvent);
                     }
                 }
             }

@@ -18,3 +18,5 @@ This plugin is highly customizable allowing for to have up to 10 completely cust
 This is licensed under GNU GPLv3, you're more than welcome to modify this plugin and release your own fork.
 
 Please just ensure that you credit this plugin. I spent a little too long on this.
+
+Spigot Page: https://www.spigotmc.org/resources/fishing-crates.105529/
